@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <h1>Hello, Next.js!</h1>
+      <h1 className="text-8xl">Hello, Next.js!</h1>
     </>
   );
 }
