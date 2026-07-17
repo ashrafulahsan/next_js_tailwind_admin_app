@@ -1,3 +1,5 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
+import Sidebar from "@/Components/Sidebar";
 import "./globals.css";
 
 export const metadata = {
@@ -7,10 +9,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-    >
-      <body className="dark">{children}</body>
+    <html lang="en" className="light">
+      <body>
+        <AppRouterCacheProvider>
+          <div className="main flex">
+            <div className="sidebarWrapper w-[18%] h-screen">
+              <div className="sidebar">
+                <Sidebar />
+              </div>
+            </div>
+            <div className="rightContent w-[82%] h-screen">
+              {children}
+            </div>
+          </div>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
